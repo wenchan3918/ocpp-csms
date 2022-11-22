@@ -6,10 +6,10 @@ services:
     build: .
     command: /app/websocket-service
     volumes:
-      - ./websocket-service/credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+      - ./credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+    env_file:
+      - .env
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/keys/PRIVATE.json
-      - GCP_PROJECT_ID=chargerevolutioncloud
       - SERVICE_APP_NAME=device-service
       # LOG_LEVEL Panic, Fatal, Error, Warn, Info, Debug, Trace
       - LOG_LEVEL=Info
@@ -23,24 +23,24 @@ services:
     build: .
     command: /app/device-service
     volumes:
-      - ./device-service/credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+      - ./credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+    env_file:
+      - .env
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/keys/PRIVATE.json
-      - GCP_PROJECT_ID=chargerevolutioncloud
       - SERVICE_APP_NAME=websocket-service
       # LOG_LEVEL Panic, Fatal, Error, Warn, Info, Debug, Trace
       - LOG_LEVEL=Info
     ports:
-      - "5000:5000"
+      - "3030:5000"
   user-service:
     image: gregszalay/user-service:v1.0
     build: .
     command: /app/user-service
     volumes:
-      - ./user-service/credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+      - ./credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+    env_file:
+      - .env
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/keys/PRIVATE.json
-      - GCP_PROJECT_ID=chargerevolutioncloud
       - SERVICE_APP_NAME=user-service
       # LOG_LEVEL Panic, Fatal, Error, Warn, Info, Debug, Trace
       - LOG_LEVEL=Info
@@ -49,10 +49,10 @@ services:
     build: .
     command: /app/transaction-service
     volumes:
-      - ./transaction-service/credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+      - ./credentials/PRIVATE.json:/tmp/keys/PRIVATE.json:ro
+    env_file:
+      - .env
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/keys/PRIVATE.json
-      - GCP_PROJECT_ID=chargerevolutioncloud
       - SERVICE_APP_NAME=transaction-service
       # LOG_LEVEL Panic, Fatal, Error, Warn, Info, Debug, Trace
       - LOG_LEVEL=Info

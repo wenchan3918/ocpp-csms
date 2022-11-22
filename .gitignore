@@ -18,3 +18,10 @@
 go.work
 
 PRIVATE.json
+
+
+.idea
+
+**/credentials
+
+.env
