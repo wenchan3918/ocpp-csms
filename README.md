@@ -48,7 +48,7 @@ P
 ![](https://i.imgur.com/nb6mpaT.png) 
 
    
-4. Enable `Datastore`  from https://console.cloud.google.com/datastore/welcome?project={YOUR_PRONJECT_ID}
+4. Enable `Datastore`  from https://console.cloud.google.com/datastore/welcome?project={YOUR_PROJECT_ID}
    - When you create data, can here see the data.
    ![](https://i.imgur.com/ojTZmCo.png)
 
