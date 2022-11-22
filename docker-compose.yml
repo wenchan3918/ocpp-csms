@@ -31,7 +31,7 @@ services:
       # LOG_LEVEL Panic, Fatal, Error, Warn, Info, Debug, Trace
       - LOG_LEVEL=Info
     ports:
-      - "3030:5000"
+      - "5000:5000"
   user-service:
     image: gregszalay/user-service:v1.0
     build: .
