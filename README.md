@@ -39,14 +39,23 @@ charging station <- websocket-service <- GCP Pub/Sub topic "BootNotificationResp
 
 1. Create a **Google Cloud Platform project**. Follow the [google guide](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 
-2. Create a **service account** and create **JSON credentials** for it. Follow the [google guide](https://developers.google.com/workspace/guides/create-credentials) (see the _"Service account credentials"_ section). When you create the service account, under "select a role" choose `Pub/Sub Admin` and `Firebase Admin` (note: for production use, you may want to restrict these to lower roles, needs to be tested).
+2. Create a **service account** and create **JSON credentials** for it. Follow the [google guide](https://developers.google.com/workspace/guides/create-credentials) (see the _"Service account credentials"_ section). When you create the service account, under "select a role" choose `Pub/Sub Admin`、`Firebase Admin`、`Cloud Datastore Owner`、`Firestore Service Agent` and `Firebase Rules Firestore Service Agent` (note: for production use, you may want to restrict these to lower roles, needs to be tested).
+  ![](https://i.imgur.com/R5gez0b.png)
 
-3. Once you have the JSON credentials, place them in the following directories, under the name 'PRIVATE.json':
+P
+3. Enable `Cloud Pub/Sub API`、`Cloud Firestore API` and `Cloud Datastore API`.
+   - Set from APIs & Services -> Enabled APIs & services -> +ENABLE APIS AND SERVICES
+![](https://i.imgur.com/nb6mpaT.png) 
 
-   - device-service/credentials/PRIVATE.json
-   - websocket-service/credentials/PRIVATE.json
-   - user-service/credentials/PRIVATE.json
-   - transaction-service/credentials/PRIVATE.json
+   
+4. Enable `Datastore`  from https://console.cloud.google.com/datastore/welcome?project={YOUR_PRONJECT_ID}
+   ![](https://i.imgur.com/0Z7QZ7Y.png)
+   - When you create data, can here see the data.
+   ![](https://i.imgur.com/ojTZmCo.png)
+
+5.Once you have the JSON credentials, place them in the following directories, under the name 'PRIVATE.json':
+   - credentials/PRIVATE.json
+![](https://i.imgur.com/jOzNZM3.jpg)
 
 > Note: you can use the same service account and the same JSON credentials file in all places, or you can create separate ones for extra security if you want
 
