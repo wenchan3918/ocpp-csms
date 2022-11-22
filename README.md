@@ -49,8 +49,7 @@ P
 
    
 4. Enable `Datastore`  from https://console.cloud.google.com/datastore/welcome?project={YOUR_PROJECT_ID}
-   - When you create data, can here see the data.
-   ![](https://i.imgur.com/ojTZmCo.png)
+
 
 5.Once you have the JSON credentials, place them in the following directories, under the name 'PRIVATE.json':
    - credentials/PRIVATE.json
@@ -99,6 +98,10 @@ P
         }
 
     If this is successful, a collection named _"chargingstations"_ and a document named _"CS123"_ should have been created in the Firestore database of your project.
+  
+    Can here see the data from https://console.cloud.google.com/datastore/welcome?project={YOUR_PROJECT_ID}
+     ![](https://i.imgur.com/ojTZmCo.png)
+
 
 9.  The websocket service should be running on `localhost:3000`. Connect to port 3000 as a websocket client (use the station id you have created in the previous step):
 
