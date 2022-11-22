@@ -49,7 +49,6 @@ P
 
    
 4. Enable `Datastore`  from https://console.cloud.google.com/datastore/welcome?project={YOUR_PRONJECT_ID}
-   ![](https://i.imgur.com/0Z7QZ7Y.png)
    - When you create data, can here see the data.
    ![](https://i.imgur.com/ojTZmCo.png)
 
